@@ -1,1 +1,246 @@
-H
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hope Foundation - Supporting education, children and communities through humanitarian action.">
+<title>Hope Foundation | Changing Lives</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:#263238;line-height:1.6}
+header{background:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #0001}
+.logo{font-size:23px;font-weight:bold;color:#16865c}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#333;font-weight:600}
+nav a:hover{color:#16865c}
+.hero{background:linear-gradient(#0009,#0008),url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600') center/cover;color:white;text-align:center;padding:130px 20px}
+.hero h1{font-size:45px;line-height:1.2;margin-bottom:20px}
+.hero p{font-size:18px}
+.btn,button{display:inline-block;background:#16865c;color:white;padding:13px 24px;border:0;border-radius:6px;text-decoration:none;cursor:pointer;font-size:15px;font-weight:bold}
+.btn:hover,button:hover{background:#106c49}
+section{padding:75px 8%;text-align:center}
+h2{font-size:32px;margin-bottom:18px;color:#16865c}
+.about{background:#f4faf7}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:25px;margin-top:35px}
+.card{background:white;padding:22px;border-radius:10px;box-shadow:0 3px 15px #0001}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+.card h3{margin:15px 0;color:#16865c}
+.donate{background:#16865c;color:white}
+.donate h2{color:white}
+.donation-box{background:white;color:#263238;max-width:560px;margin:30px auto 0;padding:30px;border-radius:12px}
+.donation-box h3{margin-bottom:10px}
+.amounts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.amounts button{background:#edf7f1;color:#16865c;border:2px solid #16865c}
+.amounts button.active{background:#16865c;color:white}
+input,textarea{width:100%;padding:14px;margin:10px 0;border:1px solid #ddd;border-radius:5px;font:inherit}
+form{max-width:550px;margin:25px auto}
+form button{width:100%;margin-top:10px}
+.note{font-size:13px;color:#666;margin-top:15px}
+footer{background:#172c25;color:white;text-align:center;padding:35px 15px}
+footer a{color:white;margin:0 8px}
+.status{margin-top:15px;font-weight:bold;color:#16865c}
+@media(max-width:650px){
+header{flex-direction:column;gap:12px}
+nav{justify-content:center;gap:12px}
+nav a{font-size:13px}
+.hero h1{font-size:32px}
+section{padding:55px 6%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">HOPE FOUNDATION</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#donate">Donate</a>
+<a href="#volunteer">Volunteer</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<h1>Together, We Can Change Lives</h1>
+<p>Helping vulnerable communities build a brighter future.</p>
+<a href="#donate" class="btn">Donate Now</a>
+</div>
+
+<section class="about" id="about">
+<h2>About Hope Foundation</h2>
+<p>Hope Foundation is a nonprofit organization dedicated to improving lives through education, healthcare, food assistance and community development.</p>
+</section>
+
+<section id="projects">
+<h2>Our Projects</h2>
+<p>Every action creates hope. Together, we can make a difference.</p>
+
+<div class="cards">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600" alt="Children learning">
+<h3>Education for All</h3>
+<p>Supporting children with learning resources and educational opportunities.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600" alt="Children receiving support">
+<h3>Child Support</h3>
+<p>Helping vulnerable children access basic needs and opportunities.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600" alt="Community giving">
+<h3>Community Support</h3>
+<p>Providing assistance to families facing difficult circumstances.</p>
+</div>
+</div>
+</section>
+
+<section class="donate" id="donate">
+<h2>Make A Difference Today ❤️</h2>
+<p>Your generosity can help us create a better tomorrow.</p>
+
+<div class="donation-box">
+<h3>Choose Your Donation</h3>
+<p>Secure credit and debit card payments</p>
+
+<div class="amounts">
+<button type="button" data-amount="10" class="active">$10</button>
+<button type="button" data-amount="25">$25</button>
+<button type="button" data-amount="50">$50</button>
+<button type="button" data-amount="100">$100</button>
+</div>
+
+<label for="customAmount">Or enter another amount (USD)</label>
+<input type="number" id="customAmount" min="1" max="10000" step="0.01" placeholder="Enter amount in USD">
+
+<button type="button" id="donateButton" style="width:100%">
+Donate Securely With Card
+</button>
+
+<p class="note">Payments are processed securely by Stripe. We do not collect or store your card details.</p>
+<p id="paymentStatus" class="status" role="status"></p>
+</div>
+</section>
+
+<section id="volunteer" class="about">
+<h2>Become a Volunteer</h2>
+<p>Give your time, share your skills and help transform lives.</p>
+<form id="volunteerForm">
+<input name="name" type="text" placeholder="Your Full Name" required>
+<input name="email" type="email" placeholder="Your Email Address" required>
+<input name="interest" type="text" placeholder="How would you like to help?" required>
+<button type="submit">Apply to Volunteer</button>
+</form>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Have a question or want to work with us? Send us a message.</p>
+<form id="contactForm">
+<input name="name" type="text" placeholder="Your Full Name" required>
+<input name="email" type="email" placeholder="Your Email Address" required>
+<input name="subject" type="text" placeholder="Subject" required>
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p class="note">Replace the contact email in the website settings before publishing.</p>
+</section>
+
+<footer>
+<h3>HOPE FOUNDATION</h3>
+<p>Building hope. Changing lives. Creating a better future.</p>
+<p>Contact: YOUR_EMAIL@example.org</p>
+<p>© 2026 Hope Foundation. All rights reserved.</p>
+</footer>
+
+<script>
+let selectedAmount = 10;
+
+const amountButtons = document.querySelectorAll("[data-amount]");
+const customInput = document.getElementById("customAmount");
+const donateButton = document.getElementById("donateButton");
+const paymentStatus = document.getElementById("paymentStatus");
+
+amountButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    selectedAmount = Number(button.dataset.amount);
+    customInput.value = "";
+    amountButtons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+  });
+});
+
+customInput.addEventListener("input", () => {
+  amountButtons.forEach(b => b.classList.remove("active"));
+});
+
+donateButton.addEventListener("click", async () => {
+  const amount = customInput.value.trim()
+    ? Number(customInput.value)
+    : selectedAmount;
+
+  if (!Number.isFinite(amount) || amount < 1 || amount > 10000) {
+    paymentStatus.textContent = "Please enter an amount between $1 and $10,000.";
+    return;
+  }
+
+  donateButton.disabled = true;
+  donateButton.textContent = "Connecting to Stripe...";
+  paymentStatus.textContent = "";
+
+  try {
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({amount: Math.round(amount * 100)})
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Unable to start payment.");
+    }
+
+    if (!data.url) throw new Error("No checkout link received.");
+
+    window.location.assign(data.url);
+  } catch (error) {
+    paymentStatus.textContent = error.message;
+    donateButton.disabled = false;
+    donateButton.textContent = "Donate Securely With Card";
+  }
+});
+
+// Contact and volunteer forms open the visitor's email application.
+// Change this address to your real monitored organization email.
+const ORGANIZATION_EMAIL = "YOUR_EMAIL@example.org";
+
+function emailForm(form, subject) {
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const fields = new FormData(form);
+    const body = [...fields.entries()]
+      .map(([key, value]) => key + ": " + value)
+      .join("\n");
+
+    const link = "mailto:" + ORGANIZATION_EMAIL +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.location.href = link;
+  });
+}
+
+emailForm(document.getElementById("contactForm"), "Hope Foundation Contact");
+emailForm(document.getElementById("volunteerForm"), "Volunteer Application");
+</script>
+
+</body>
+</html>
